@@ -58,3 +58,4 @@ Before starting, ensure you have the following installed on your system:
 composer create-project --prefer-dist laravel/laravel pos-system
 # pos_project
 # pos_project
+# pos_projects
