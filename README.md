@@ -3,7 +3,7 @@
   I have created a presentation video showcasing all of the functionalities of the project. You can watch the video to get a quick overview of the features and functionalities implemented.
 
   ### Video Link:
-  [Watch the Project Presentation Video](https://drive.google.com/file/d/1pERV-MTKoiL9HsH6ijMIN896gA9R_PGb/view?usp=sharing)
+  [Watch the Project Presentation Video](https://drive.google.com/drive/folders/1_9jMMkVvx6wgtNMK6oALZ0JM8AvY5QaU)
 
 
 # Point of Sale System - Laravel 12, Vue 3 & Inertia.js
@@ -59,3 +59,4 @@ composer create-project --prefer-dist laravel/laravel pos-system
 # pos_project
 # pos_project
 # pos_projects
+# pos
