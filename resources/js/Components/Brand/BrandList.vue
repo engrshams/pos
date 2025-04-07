@@ -1,0 +1,75 @@
+<template>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12"></div>
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            <h3>Brand</h3>
+                        </div>
+                        <hr />
+                        <div class="float-end">
+                            <Link href="/BrandSavePage?id=0" class="btn btn-success mx-3 btn-sm">
+                                Add Brand <!-- if id=0 then add brand, else update brand -->
+                            </Link>
+                        </div>
+
+                        <!-- Modal -->
+
+                        <div>
+                            <input placeholder="Search..." class="form-control mb-2 w-auto form-control-sm" type="text"
+                                v-model="searchValue">
+                            <EasyDataTable
+                                buttons-pagination
+                                alternating
+                                :headers="Header"   
+                                :items="Item"
+                                :rows-per-page="10"
+                                :search-field="searchField"
+                                :search-value="searchValue"
+                                show-index
+                                >
+                                <template #item-number="{ id, name }">
+                                    <a class="btn btn-success mx-3 btn-sm" :href="`/BrandSavePage?id=${id}`">Edit</a>
+                                    <button class="btn btn-danger btn-sm" @click="DeleteClick(id)">Delete</button>
+                                </template>
+                            </EasyDataTable>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script setup>
+    import { Link, useForm, usePage, router } from "@inertiajs/vue3";  // data send from front end to backend by useForm
+    import { createToaster } from "@meforma/vue-toaster";
+    const toaster = createToaster({ position: "top-right" });
+    import { ref } from "vue";  // vuejs reactive library
+    import { onMounted } from "vue";
+
+    let page = usePage();  // data will come directly to page so usePage not useForm
+    const Header = [
+        { text: "Name", value: "name" },
+        { text: "Action", value: "number" },
+    ]
+    const Item = ref(page.props.brands);
+    const searchValue = ref();
+
+    onMounted(() => {
+        if (page.props.flash.message) {
+            toaster.success(page.props.flash.message);   // Show success message as Brand deleted successfully
+        }
+    });
+
+    const DeleteClick = (id) => {
+    let text = "Do you want to delete this brand?";
+    if (confirm(text) === true) {
+        router.get(`/delete-brand/${id}`);  // Route to delete brand
+    } else {
+        text = "You canceled!";
+    }
+    };
+</script>
