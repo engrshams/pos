@@ -3,7 +3,7 @@
   I have created a presentation video showcasing all of the functionalities of the project. You can watch the video to get a quick overview of the features and functionalities implemented.
 
   ### Video Link:
-  [Watch the Project Presentation Video](https://drive.google.com/drive/folders/1_9jMMkVvx6wgtNMK6oALZ0JM8AvY5QaU)
+  [Watch the Project Presentation Video](https://drive.google.com/file/d/1M8_CYHSCcaF2GahqrO6m0_wHiSlZHpej/view?usp=sharing)
 
 
 # Point of Sale System - Laravel 12, Vue 3 & Inertia.js
