@@ -60,3 +60,4 @@ composer create-project --prefer-dist laravel/laravel pos-system
 # pos_project
 # pos_projects
 # pos
+# pos
